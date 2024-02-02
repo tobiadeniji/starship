@@ -3,11 +3,14 @@
 
 # Inserts a blank line between shell prompts
 add_newline = true
+# os = ""
+# format = """$character"""
+# right_format = """$username"""
 
 # Replace the '❯' symbol in the prompt with '➜'
 [character] # The name of the module we are configuring is 'character'
-success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-error_symbol = '[➜](bold red) '
+success_symbol = '[➜](bold green)    ' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+error_symbol = '[➜](bold red)    '
 
 # Disable the package module, hiding it from the prompt completely
 [package]
@@ -18,9 +21,9 @@ threshold = 10
 style = 'bold red'
 
 [[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
-threshold = 70
+threshold = 50
 style = 'bold yellow'
-discharging_symbol = '💦'
+discharging_symbol = '⚡'
 
 # when capacity is over 30%, the battery indicator will not be displayed
 
@@ -29,7 +32,8 @@ symbol = " "
 format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
-symbol = ""
+symbol = ""
+# symbol = ""
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
@@ -44,5 +48,11 @@ symbol = " "
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
-symbol = ""
+symbol = ""
 format = '[ $symbol ($version) ]($style)'
+
+[memory_usage]
+format = "$symbol[${ram}( | ${swap})]($style) "
+threshold = 70
+style = "bold dimmed white"
+disabled = false
