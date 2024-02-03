@@ -9,6 +9,7 @@ $memory_usage\
 $docker_context\
 $java\
 $nodejs\
+$battery\
 $character
 """
 
@@ -29,16 +30,21 @@ trim_at = '.companyname.com'
 disabled = false
 
 [directory]
-# home_symbol = "~"
 # home_symbol = " "
 format = "[  $path]($style)"
 # format = "[    $path ]($style)"
 read_only = "  "
 
+# Replace the '❯' symbol in the prompt with '➜'
+[character] # The name of the module we are configuring is 'character'
+success_symbol = ' [](bold green)'
+error_symbol = ' [](bold red)'
+# error_symbol = '[](bold red) '
+
 [git_branch]
 symbol = ""
-# symbol = "  "
-format = '[ $symbol $branch ]($style)'
+# symbol = "  "
+format = '[ $symbol $branch]($style)'
 
 [git_status]
 format = '[$all_status$ahead_behind]($style)'
@@ -48,16 +54,6 @@ format = "([+$added]($added_style))[]($added_style)"
 added_style = "fg:#1C3A5E"
 deleted_style = "fg:bright-red"
 disabled = false
-
-[hg_branch]
-format = "[ $symbol$branch ]($style)"
-symbol = " "
-
-# Replace the '❯' symbol in the prompt with '➜'
-[character] # The name of the module we are configuring is 'character'
-success_symbol = ' [](bold green)'
-error_symbol = ' [](bold red)'
-# error_symbol = '[](bold red) '
 
 # Disable the package module, hiding it from the prompt completely
 [package]
@@ -70,9 +66,9 @@ style = 'bold red'
 
 # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
 [[battery.display]]
-threshold = 50
+threshold = 100
 style = 'bold yellow'
-discharging_symbol = '⚡'
+discharging_symbol = ' ⚡'
 
 # when capacity is over 30%, the battery indicator will not be displayed
 
@@ -97,3 +93,8 @@ format = "$symbol[${ram}( | ${swap})]($style) "
 threshold = 70
 style = "bold dimmed white"
 disabled = false
+
+# [[cursor.style]]
+# shape = "Beam"
+# blinking = "Always"
+
