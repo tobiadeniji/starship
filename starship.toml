@@ -66,11 +66,10 @@ style = 'bold red'
 
 # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
 [[battery.display]]
-threshold = 100
+threshold = 60
 style = 'bold yellow'
-discharging_symbol = ' ⚡'
-
-# when capacity is over 30%, the battery indicator will not be displayed
+discharging_symbol = ' ﯓ'
+# when capacity is over 50%, the battery indicator will not be displayed
 
 [golang]
 symbol = " "
@@ -93,8 +92,3 @@ format = "$symbol[${ram}( | ${swap})]($style) "
 threshold = 70
 style = "bold dimmed white"
 disabled = false
-
-# [[cursor.style]]
-# shape = "Beam"
-# blinking = "Always"
-
