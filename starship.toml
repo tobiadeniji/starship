@@ -45,6 +45,8 @@ error_symbol = ' [](bold red)'
 symbol = ""
 # symbol = "  "
 format = '[ $symbol $branch]($style)'
+truncation_length = 13
+truncation_symbol  = "..."
 
 [git_status]
 format = '[$all_status$ahead_behind]($style)'
@@ -59,14 +61,14 @@ disabled = false
 [package]
 disabled = false
 
-# 'bold red' style and discharging_symbol when capacity is between 0% and 10%
+# 'bold red' style and discharging_symbol when capacity is between 0% and 30%
 [[battery.display]]
-threshold = 10
+threshold = 30
 style = 'bold red'
 
 # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
 [[battery.display]]
-threshold = 60
+threshold = 50
 style = 'bold yellow'
 discharging_symbol = ' ﯓ'
 # when capacity is over 50%, the battery indicator will not be displayed
@@ -92,3 +94,7 @@ format = "$symbol[${ram}( | ${swap})]($style) "
 threshold = 70
 style = "bold dimmed white"
 disabled = false
+
+[custom.bash]
+command =  "echo |"
+when = true
