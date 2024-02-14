@@ -31,7 +31,7 @@ trim_at = '.companyname.com'
 disabled = false
 
 [os]
-format = '[$symbol](bold purple) '   
+format = '[$symbol](bold blue) ' 
 disabled = false
 
 [os.symbols]
@@ -80,6 +80,7 @@ discharging_symbol = ' '
 threshold = 50
 style = 'bold yellow'
 discharging_symbol = ' ﯓ'
+
 # when capacity is over 50%, the battery indicator will not be displayed
 [golang]
 symbol = " "
@@ -106,7 +107,7 @@ format = "$symbol[${ram}( | ${swap})]($style) "
 threshold = 70
 # symbol = "ﲵ"
 style = "bold dimmed white"
-disabled = true
+disabled = true 
 
 [custom.bash]
 command =  "echo |"
