@@ -31,7 +31,7 @@ trim_at = '.companyname.com'
 disabled = false
 
 [os]
-format = '[$symbol](bold blue) ' 
+format = '[$symbol](bold gray) ' 
 disabled = false
 
 [os.symbols]
@@ -50,8 +50,8 @@ error_symbol = ' [](bold red)'
 # error_symbol = '[](bold red) '
 
 [git_branch]
-symbol = ""
 # symbol = "  "
+symbol = " "
 format = '[ $symbol $branch]($style)'
 truncation_length = 13
 truncation_symbol  = "..."
