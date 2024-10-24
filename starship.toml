@@ -1,7 +1,8 @@
 format = """\
 $os$username$hostname:\
 $directory\
-$git_branch\
+$ruby\
+:$git_branch\
 $git_status\
 $git_metrics\
 $golang\
@@ -13,9 +14,6 @@ $nodejs\
 $battery\
 $character
 """
-
-# Get editor completions based on the config schema
-# "$schema" = 'https://starship.rs/config-schema.json'
 
 [username]
 style_user = 'yellow bold'
@@ -38,21 +36,15 @@ disabled = false
 Macos = ''
 
 [directory]
-# home_symbol = " "
-format = "[  $path]($style)"
-# format = "[    $path ]($style)"
-read_only = "  "
+format = "[$path]($style)"
 
-# Replace the '❯' symbol in the prompt with '➜'
-[character] # The name of the module we are configuring is 'character'
-success_symbol = ' [](bold green)'
-error_symbol = ' [](bold red)'
-# error_symbol = '[](bold red) '
+[character] 
+success_symbol = '[\$](bold green)'
+error_symbol = '[\$](bold red)'
 
 [git_branch]
-# symbol = "  "
-symbol = " "
-format = '[ $symbol $branch]($style)'
+symbol = ""
+format = '[$symbol \($branch\)]($style)'
 truncation_length = 13
 truncation_symbol  = "..."
 
@@ -86,6 +78,10 @@ discharging_symbol = ' ﯓ'
 symbol = " "
 format = '[ $symbol($version)]($style)'
 
+[ruby]
+symbol = '💎'
+format = "via [$symbol($version )($gemset)]($style)"
+
 [docker_context]
 symbol = " "
 format = '[ $symbol $context ]($style) $path'
@@ -108,7 +104,3 @@ threshold = 70
 # symbol = "ﲵ"
 style = "bold dimmed white"
 disabled = true 
-
-[custom.bash]
-command =  "echo |"
-when = true
