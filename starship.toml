@@ -8,6 +8,8 @@ $git_metrics\
 $character
 """
 
+add_newline = false
+
 [username]
 style_user = 'yellow bold'
 style_root = 'red bold'
