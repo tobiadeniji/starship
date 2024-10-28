@@ -1,17 +1,10 @@
 format = """\
-$os$username$hostname:\
+$username$hostname:\
 $directory\
 $ruby\
 :$git_branch\
 $git_status\
 $git_metrics\
-$golang\
-$memory_usage\
-$docker_context\
-$kubernetes\
-$java\
-$nodejs\
-$battery\
 $character
 """
 
@@ -24,16 +17,9 @@ show_always = true
 
 [hostname]
 ssh_only = false
-format = '[$ssh_symbol](bold blue)@[$hostname](bold red)'
+format = '@[$hostname](bold red)'
 trim_at = '.companyname.com'
 disabled = false
-
-[os]
-format = '[$symbol](bold gray) ' 
-disabled = false
-
-[os.symbols]
-Macos = ''
 
 [directory]
 format = "[$path]($style)"
@@ -45,8 +31,8 @@ error_symbol = '[\$](bold red)'
 [git_branch]
 symbol = ""
 format = '[$symbol \($branch\)]($style)'
-truncation_length = 13
-truncation_symbol  = "..."
+# truncation_length = 13
+# truncation_symbol  = "..."
 
 [git_status]
 format = '[$all_status$ahead_behind]($style)'
@@ -57,50 +43,8 @@ added_style = "fg:#1C3A5E"
 deleted_style = "fg:bright-red"
 disabled = false
 
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = false
-
-# 'bold red' style and discharging_symbol when capacity is between 0% and 30%
-[[battery.display]]
-threshold = 30
-style = 'bold red'
-discharging_symbol = ' '
-
-# 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
-[[battery.display]]
-threshold = 50
-style = 'bold yellow'
-discharging_symbol = ' ﯓ'
-
-# when capacity is over 50%, the battery indicator will not be displayed
-[golang]
-symbol = " "
-format = '[ $symbol($version)]($style)'
-
 [ruby]
-symbol = '💎'
-format = "via [$symbol($version )($gemset)]($style)"
+symbol = '  '
+# format = "[$symbol($version)($gemset)]($style)"
+format = "[$symbol($version)]($style)"
 
-[docker_context]
-symbol = " "
-format = '[ $symbol $context ]($style) $path'
-
-[kubernetes]
-format = '[ $context\($namespace\)](bold purple) '
-disabled = true
-
-[java]
-symbol = " "
-format = '[ $symbol ($version) ]($style)'
-
-[nodejs]
-symbol = ""
-format = '[ $symbol ($version) ]($style)'
-
-[memory_usage]
-format = "$symbol[${ram}( | ${swap})]($style) "
-threshold = 70
-# symbol = "ﲵ"
-style = "bold dimmed white"
-disabled = true 
