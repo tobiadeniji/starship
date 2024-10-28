@@ -31,7 +31,7 @@ success_symbol = '[\$](bold green)'
 error_symbol = '[\$](bold red)'
 
 [git_branch]
-symbol = " "
+symbol = ""
 format = '[$symbol \($branch\)]($style)'
 # truncation_length = 13
 # truncation_symbol  = "..."
