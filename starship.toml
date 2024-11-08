@@ -28,11 +28,13 @@ format = "[$path]($style)"
 
 [character] 
 success_symbol = '[\$](bold green)'
+# success_symbol = '[](bold yellow)'
 error_symbol = '[\$](bold red)'
 
 [git_branch]
 symbol = ""
-format = '[$symbol \($branch\)]($style)'
+# format = '[$symbol \[$branch\]]($style)'
+format = '[\[ $symbol $branch \]]($style)'
 # truncation_length = 13
 # truncation_symbol  = "..."
 
